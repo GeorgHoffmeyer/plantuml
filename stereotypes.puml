@@ -1,0 +1,32 @@
+@startuml
+
+
+!definelong Container(e_alias, e_label, e_color)
+rectangle "==e_label\n<color:e_color>" <<container>> as e_alias
+!enddefinelong
+
+
+!define ChildContainer(e_name) Container(e_name, e_name, #black)
+
+hide stereotype
+
+skinparam rectangle<<container>> {
+    RoundCorner 25
+    BorderColor Black
+    BackgroundColor #White
+    Shadowing false
+}
+
+Container(test, test, #blue) {
+    rectangle bla
+}
+
+ChildContainer(test4) {
+    rectangle blupp
+}
+
+rectangle test as test1 {
+    rectangle test as test2
+}
+
+@enduml
